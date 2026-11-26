@@ -4,7 +4,15 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+
+            #region 1. Get top 3 most expensive products
+
+            var result  = Source.ProductList
+                .OrderByDescending(p => p.UnitPrice)
+                .Take(3);
+            #endregion
+
+
         }
     }
 }
