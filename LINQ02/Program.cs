@@ -43,9 +43,16 @@
 
             #region 6. Group all products by Category and print each group with its product count.
 
+            //var result = Source.ProductList
+            //    .GroupBy(p => p.Category)
+            //    .Select(g => new { Category = g.Key, productcount = g.Count() });
+            #endregion
+
+            #region 7. Group products by Category and project only product names per group
+
             var result = Source.ProductList
                 .GroupBy(p => p.Category)
-                .Select(g => new { Category = g.Key, productcount = g.Count() });
+                .Select(g => new { Category = g.Key, productNames = g.Select(p => p.ProductName) });
             #endregion
 
 
