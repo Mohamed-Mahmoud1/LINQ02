@@ -138,11 +138,18 @@
 
             #region 17. Try to get the first product with a price > $500. it returns null instead of throwing.
 
-            var result = Source.ProductList
-                .FirstOrDefault(p => p.UnitPrice > 500);
+            //var result = Source.ProductList
+            //    .FirstOrDefault(p => p.UnitPrice > 500);
 
             #endregion
 
+            #region 18. Generate a multiplication table row for 7
+
+            var result = Enumerable.Range(1, 12)
+           .Select(i => 7 * i);
+
+            #endregion
+           
         }
     }
 }
