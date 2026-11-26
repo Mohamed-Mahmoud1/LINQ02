@@ -145,11 +145,17 @@
 
             #region 18. Generate a multiplication table row for 7
 
-            var result = Enumerable.Range(1, 12)
-           .Select(i => 7 * i);
+            // var result = Enumerable.Range(1, 12)
+            //.Select(i => 7 * i);
 
             #endregion
-           
+
+            #region 19. Generate even numbers between 1 and 30.
+
+            var result = Enumerable.Range(1, 30)
+             .Where(n => n % 2 == 0);
+            #endregion
+
         }
     }
 }
