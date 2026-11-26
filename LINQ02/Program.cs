@@ -123,9 +123,16 @@
 
             #region 15. Build a Dictionary<int, Product> keyed by ProductID. Then retrieve and print the product with ID = 18.
 
-            var result = Source.ProductList
-                .ToDictionary(p => p.ProductID);
+            //var result = Source.ProductList
+            //    .ToDictionary(p => p.ProductID);
 
+
+            #endregion
+
+            #region 16. Get the first product whose price is greater than $50.
+
+            var result = Source.ProductList
+                .FirstOrDefault(p => p.UnitPrice > 50);
 
             #endregion
 
