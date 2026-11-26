@@ -90,8 +90,16 @@
 
             #region 11. Find the CHEAPEST and MOST EXPENSIVE product prices
 
-            var Cheapest = Source.ProductList.Min(p => p.UnitPrice);
-            var MostExpensive = Source.ProductList.Max(p => p.UnitPrice);
+            //var Cheapest = Source.ProductList.Min(p => p.UnitPrice);
+            //var MostExpensive = Source.ProductList.Max(p => p.UnitPrice);
+
+            #endregion
+
+            #region 12. Get a distinct list of all product categories
+
+            var result = Source.ProductList
+                .Select(p => p.Category)
+                .Distinct();
 
             #endregion
         }
