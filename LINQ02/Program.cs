@@ -23,9 +23,17 @@
 
             #region 3. Take products from the list as long as Their UnitPrice is less than $25 (list is ordered by price).
 
+            //var result = Source.ProductList
+            //    .OrderBy(p => p.UnitPrice)
+            //    .TakeWhile(p => p.UnitPrice < 25);
+            #endregion
+
+            #region 4. Check if ALL products in the "Seafood" category are in stock
+
             var result = Source.ProductList
-                .OrderBy(p => p.UnitPrice)
-                .TakeWhile(p => p.UnitPrice < 25);
+                .Where(p => p.Category == "Seafood")
+                .All(p => p.UnitsInStock > 0);
+
             #endregion
 
 
