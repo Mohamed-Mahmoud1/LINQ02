@@ -37,8 +37,15 @@
             #endregion
 
             #region 5. Check if the ID list contains 9
-            int[] ids = { 3, 9, 13, 18 };
-            var result = ids.Contains(9);
+            //int[] ids = { 3, 9, 13, 18 };
+            //var result = ids.Contains(9);
+            #endregion
+
+            #region 6. Group all products by Category and print each group with its product count.
+
+            var result = Source.ProductList
+                .GroupBy(p => p.Category)
+                .Select(g => new { Category = g.Key, productcount = g.Count() });
             #endregion
 
 
