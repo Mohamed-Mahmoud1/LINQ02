@@ -131,8 +131,15 @@
 
             #region 16. Get the first product whose price is greater than $50.
 
+            //var result = Source.ProductList
+            //    .FirstOrDefault(p => p.UnitPrice > 50);
+
+            #endregion
+
+            #region 17. Try to get the first product with a price > $500. it returns null instead of throwing.
+
             var result = Source.ProductList
-                .FirstOrDefault(p => p.UnitPrice > 50);
+                .FirstOrDefault(p => p.UnitPrice > 500);
 
             #endregion
 
