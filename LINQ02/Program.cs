@@ -30,10 +30,15 @@
 
             #region 4. Check if ALL products in the "Seafood" category are in stock
 
-            var result = Source.ProductList
-                .Where(p => p.Category == "Seafood")
-                .All(p => p.UnitsInStock > 0);
+            //var result = Source.ProductList
+            //    .Where(p => p.Category == "Seafood")
+            //    .All(p => p.UnitsInStock > 0);
 
+            #endregion
+
+            #region 5. Check if the ID list contains 9
+            int[] ids = { 3, 9, 13, 18 };
+            var result = ids.Contains(9);
             #endregion
 
 
