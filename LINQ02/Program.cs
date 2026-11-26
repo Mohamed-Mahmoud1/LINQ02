@@ -65,18 +65,22 @@
 
             #region 9. Using QUERY SYNTAX, group customers by Country, and for each group select { Country, Count, TotalOrderValue }.
 
-            var result = from c in Source.CustomerList
-                         group c by c.Country into g
-                         select new
-                         {
-                             Country = g.Key,
-                             Count = g.Count(),
-                             TotalOrderValue = g.Sum(c => c.Orders.Sum(o => o.Total))
-                         };
+            //var result = from c in Source.CustomerList
+            //             group c by c.Country into g
+            //             select new
+            //             {
+            //                 Country = g.Key,
+            //                 Count = g.Count(),
+            //                 TotalOrderValue = g.Sum(c => c.Orders.Sum(o => o.Total))
+            //             };
 
             #endregion
 
+            #region 10. Calculate the total number of units in stock across all products
 
+            var result = Source.ProductList
+                .Sum(p => p.UnitsInStock);
+            #endregion
         }
     }
 }
