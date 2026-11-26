@@ -7,9 +7,17 @@
 
             #region 1. Get top 3 most expensive products
 
+            //var result  = Source.ProductList
+            //    .OrderByDescending(p => p.UnitPrice)
+            //    .Take(3);
+            #endregion
+
+            #region 2. show page 2 of products, with page size = 5
+
             var result  = Source.ProductList
                 .OrderByDescending(p => p.UnitPrice)
-                .Take(3);
+                .Skip(5)
+                .Take(5);
             #endregion
 
 
